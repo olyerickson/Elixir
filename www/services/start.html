@@ -1,0 +1,86 @@
+<html>
+   <head>
+   <link rel="stylesheet" type="text/css" media="screen" href="../static/screen.css" />
+   <script type="text/javascript" src="../static/jquery-1.7.1.js"></script>
+   <script type="text/javascript" src="../static/jquery-ui-1.8.17.custom/js/jquery-ui-1.8.17.custom.min.js"></script>
+   <script type="text/javascript">
+      $(document).ready(function() {
+
+         $("a").click(function() {
+            alert("Hello world!");
+         });
+
+         $('#date').datepicker();
+
+         $( ".primary.subject" ).sortable();
+         $( "#tim" ).droppable({
+            drop: function( event, ui ) {
+               alert(ui.draggable.context.innerHTML + ' onto ' + this.innerHTML);
+            }
+          });
+
+      });
+   </script>
+   </head>
+   <body xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:con="http://www.w3.org/2000/10/swap/pim/contact#"
+         xmlns:ds4383_vocab="http://logd.tw.rpi.edu/source/data-gov/dataset/4383/vocab/">
+
+      <input type="text" name="date" id="date" />
+      <a href="">Link</a>
+
+      <div about="http://logd.tw.rpi.edu/source/data-gov/dataset/4383/version/2011-Nov-29/farmersMarket_76" class="primary subject">
+         <span property="rdfs:label dc:title" class="subject label">4383:farmersMarket_76</span>
+
+         <div id="tim" class="po">
+            <span class="predicate label">First</span>
+            <span class="object" property="ds4383_vocab:column_1">Tim</span>
+         </div>
+
+         <div id="lebo" class="po">
+            <span class="predicate label">Last</span>
+            <span class="object" property="ds4383_vocab:column_2">Lebo</span>
+         </div>
+
+         <div rel="column_3" class="po">
+            <span class="predicate label">column_3</span>
+            <span class="object">NY</span>
+         </div>
+
+         <div rel="con:address" resource="http://logd.tw.rpi.edu/source/data-gov/dataset/4383/version/2011-Nov-29/http_www_w3_org_2000_10_swap_pim_contact_address/address_6">
+
+            <div class="po">
+               <span class="predicate label">First</span>
+               <span class="object" property="ds4383_vocab:column_4">John</span>
+            </div>
+
+            <div class="po">
+               <span class="predicate label">Last</span>
+               <span class="object" property="ds4383_vocab:column_5">Erickson</span>
+            </div>
+
+         </div>
+
+         <div rel="column_6" class="po">
+            <span class="predicate label">column_6</span>
+            <span class="object">VT</span>
+         </div>
+
+         <div rel="column_7" class="po">
+            <span class="predicate label">column_7</span>
+            <span class="object">2012-01-11</span>
+         </div>
+      </div>
+
+      <div about="http://logd.tw.rpi.edu/source/data-gov/dataset/4383/version/2011-Nov-29/farmersMarket_77">
+         <div rel="column_1"><span>Jim</span></div>
+         <div rel="column_2"><span>McCusker</span></div>
+         <div rel="column_3"><span>CT</span></div>
+         <div rel="column_4"><span>John</span></div>
+         <div rel="column_5"><span>Erickson</span></div>
+         <div rel="column_6"><span>VT</span></div>
+         <div rel="column_7"><span>2012-01-18</span></div>
+      </div>
+
+   </body>
+</html>
